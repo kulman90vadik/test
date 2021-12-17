@@ -1,0 +1,12 @@
+.logo {
+    outline: transparent;
+    &__images {
+        max-width: 159px;
+        width: 100%;
+        height: 43px;
+        @include max($s) {
+            max-width: 142px;
+            height: 38px;
+        }
+    }
+}

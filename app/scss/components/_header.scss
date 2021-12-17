@@ -1,0 +1,11 @@
+.header {
+    background-color: $blue;
+    padding: 1px 0 6px;
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+

@@ -1,0 +1,29 @@
+.menu {
+    &__list {
+        display: flex;
+    }
+    &__item {
+        &:not(:last-child) {
+            margin-right: 102px;
+        }
+    }
+    &__link {
+        outline: transparent;
+        color: #fff;
+        font-weight: 700;
+        transition: color 0.2s ease-in;
+        &[href]:hover {
+            color: $pink;
+            cursor: url(../images/cursor-menu.svg), default;
+        }
+        &[href]:focus {
+            color: $grey-text;
+        }
+        &[href]:active {
+            color: $grey;
+        }
+        &--active {
+            border-bottom: 2px solid #fff;
+        }
+    }
+}
