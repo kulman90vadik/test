@@ -1,10 +1,11 @@
 .menu {
+    padding-top: 15px;
     &__list {
         display: flex;
     }
     &__item {
         &:not(:last-child) {
-            margin-right: 102px;
+            margin-right: 109px;
         }
     }
     &__link {
@@ -14,7 +15,7 @@
         transition: color 0.2s ease-in;
         &[href]:hover {
             color: $pink;
-            cursor: url(../images/cursor-menu.svg), default;
+            cursor: url(../images/cursor.svg), default;
         }
         &[href]:focus {
             color: $grey-text;

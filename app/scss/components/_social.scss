@@ -1,0 +1,26 @@
+.social {
+    
+    &__list {
+        display: flex;
+
+    }
+    &__item {
+        &:not(:last-child) {
+            margin-right: 46px;
+        }
+    }
+    &__link {
+        outline: transparent;
+        &:hover .footer__icon,
+        &:focus .footer__icon {
+            fill: $pink;
+        }
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
+        fill: #fff;
+        transition: fill 0.3s ease-in;
+    }
+}

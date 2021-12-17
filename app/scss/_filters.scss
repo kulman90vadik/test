@@ -1,0 +1,244 @@
+.filters {
+    background-color: $white;
+    box-shadow: 0 0 20px #e0e1e5;
+    border-radius: 2px;
+    padding: 43px 0 38px;
+    &__inner {
+        display: flex;
+    }
+    &__list {
+        max-width: 244px;
+        width: 100%;
+        margin-right: 49px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &__item {
+        max-width: 115px;
+        width: 100%;
+        &:nth-child(-n+2) {
+            margin-bottom: 18px;
+        }
+    }
+    &__label {
+        position: relative;
+        padding-left: 36px;
+        cursor: pointer;
+        &:hover .filters__radio,
+        &:focus .filters__radio {
+            background-color: $pink;
+        }
+    }
+    &__input {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        position: absolute;
+        &:checked + .filters__radio {
+            background-color: $purple;
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+    &__radio {
+        display: block;
+        position: absolute;
+        left: 0;
+        background-color: $grey;
+        border-radius: 2px;
+        width: 20px;
+        height: 20px;
+        top: -2px;
+        transition: background-color 0.2s ease-in;
+        &::after {
+            position: absolute;
+            content: '';
+            background-image: url(../images/check.svg);
+            @include bg;
+            width: 13px;
+            height: 10px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.2s ease-in;
+        }
+    }
+    &__select {
+        max-width: 165px;
+        height: 40px;
+        margin-right: 30px;
+        width: 100%;
+        position: relative;
+    }
+    &__button {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $grey;
+        border-radius: 2px;
+        padding: 4px 4px 4px 20px;
+        border: none;
+        color: inherit;
+        cursor: pointer;
+        transition: 0.4s;
+        outline: transparent;
+        transition: background-color 0.3s ease-in;
+        &:hover {
+            background-color: $pink;
+        }
+        &:hover .filters__icon{
+            fill: $pink;
+        }
+        &:focus {
+            background-color: rgba($pink, 0.8);
+        }    
+        &:focus .filters__icon{
+            fill: rgba($pink, 0.8);
+        }
+        &:active {
+            background-color: $purple;
+        }
+        &:active .filters__icon{
+            fill: $purple;
+        }
+    }
+    &__text {
+        @include lineClamp;
+        -webkit-line-clamp: 1;
+    }
+    &__arrow {
+        display: flex;
+        width: 32px;
+        height: 32px;
+        background-color: $white;
+        border-radius: 2px;
+    }    
+    &__icon {
+        margin: auto;
+        fill: $grey;
+        width: 16px;
+        height: 14px;
+        transition: transform 0.3s ease-in, fill 0.3s ease-in;
+        &--active {
+            transform: rotate(180deg);
+            transition: transform 0.3s ease-in;
+            transform-origin: center;
+        }
+    }
+    &__holder {
+        background-color: $white;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        max-width: 165px;
+        width: 100%;
+        position: absolute;
+        top: 40px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        z-index: 55;
+    }
+    &__option {
+        cursor: pointer;
+        padding: 10px 10px 10px 20px;
+        transition: background-color 0.2s ease-in;
+        &:hover {
+            background-color: #f4f2f6;
+            cursor: url(../images/cursor.svg), default;
+        }
+    }
+    &__task {
+        display: flex;
+        max-width: 165px;
+        height: 40px;
+        width: 100%;
+        margin-right: auto;
+        background-color: $grey;
+        border-radius: 2px;
+        padding: 4px;
+    }
+    &__major {
+        &:hover + .filters__descr--left,
+        &:focus + .filters__descr--left {
+            background-color: $pink;
+            cursor: url(../images/cursor.svg), default;
+        }
+    }
+    &__minor {
+        &:hover + .filters__descr--right,
+        &:focus + .filters__descr--right {
+            background-color: rgba($blue, 0.2);
+            cursor: url(../images/cursor.svg), default;
+        }
+    }
+    &__major,
+    &__minor {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        position: absolute;
+        outline: transparent;
+        &:checked + .filters__descr {
+            background-color: $blue;
+            color: white;
+        }
+    }
+    &__items {
+        width: 50%; 
+        cursor: pointer;
+    }
+    &__descr {
+        display: block;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.2s ease-in, color 0.2s ease-in;
+        &--left {
+            background-color: $purple;
+            border-radius: 2px 0px 0px 2px;
+        }
+        &--right {
+            background-color: $white;
+            border-radius: 0px 2px 2px 0px;
+        }
+    }
+    &__form {
+        max-width: 364px;
+        width: 100%;
+    }
+    &__search {
+        width: 100%;
+        height: 37px;
+        border: none;
+        border-bottom: 1px solid $grey;
+        outline: transparent;
+        padding-left: 33px;
+        padding-top: 7px;
+        background-color: transparent;
+        background-image: url(../images/search.svg);
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: auto;
+        transition: padding-left 0.2s ease-in;
+        color: $grey;
+        &::placeholder {
+            color: $grey;
+        }
+        &:focus {
+            background-image: none;
+            padding-left: 3px;
+            transition: padding-left 0.2s ease-in, color 0.2s ease-in;
+            &::placeholder {
+                color: rgba($grey, 0.5); 
+            }
+        }
+    }
+}
