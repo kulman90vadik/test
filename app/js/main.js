@@ -1,6 +1,6 @@
-
 window.addEventListener('load', function(){
 
+// start select    
     let filterBtn = document.querySelector('.filters__button');
     filterBtn.addEventListener('click', function(){
         this.querySelector('.filters__icon').classList.toggle('filters__icon--active');
@@ -11,7 +11,6 @@ window.addEventListener('load', function(){
             panel.style.maxHeight = panel.scrollHeight + "px";
         }
     });
-
 
     let filterOption = document.querySelectorAll('.filters__option');
     filterOption.forEach(option => {
@@ -25,4 +24,12 @@ window.addEventListener('load', function(){
         });
         
     });
+// finish select    
+
+// start social
+    document.querySelector('.social__btn').addEventListener('click', function(){
+        document.querySelector('.social__list').classList.toggle('social__list--active');
+    });
+// finish social
+
 });

@@ -33,8 +33,21 @@ body {
     max-width: 1200px;
     padding: 0 28px;
     margin: 0 auto;
-    // @include max($sm) {
-    //     padding: 0 5px;
-    // }
+    @include max($md) {
+        padding: 0 24px;
+    }
+    @include max($s) {
+        padding: 0 15px;
+    }
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba($grey-text, 0.3);
+    border-radius: 2px;
+}

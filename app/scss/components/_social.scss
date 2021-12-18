@@ -1,19 +1,48 @@
 .social {
-    
+    position: relative;
+
     &__list {
         display: flex;
-
+        @include max($sm) {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in;
+            position: absolute;
+            flex-direction: column;
+            bottom: 44px;
+        }
     }
+
+    &__list--active {
+        transition: transform 0.3s ease-in;
+        transform: translateX(0%);
+    }
+
     &__item {
         &:not(:last-child) {
             margin-right: 46px;
+            @include max($md) {
+                margin-right: 25px;
+                @include max($sm) {
+                    margin-right: 0;
+                }
+            }
+        }
+        @include max($sm) {
+            width: 46px;
+            height: 44px;
+            background-color: $blue;
+            display: flex;
         }
     }
+
     &__link {
         outline: transparent;
-        &:hover .footer__icon,
-        &:focus .footer__icon {
+        &:hover .social__icon,
+        &:focus .social__icon {
             fill: $pink;
+        }
+        @include max($sm) {
+            margin: auto;
         }
     }
 
@@ -22,5 +51,31 @@
         height: 24px;
         fill: #fff;
         transition: fill 0.3s ease-in;
+    }
+
+    &__btn {
+        background-color: rgba($purple, 0.2);
+        padding: 0;
+        width: 46px;
+        height: 44px;
+        border: none;
+        display: none;
+        outline: transparent;
+        cursor: pointer;
+        @include max($sm) {
+            display: flex;
+        }
+        &:hover .social__share,
+        &:focus .social__share{
+            fill: $pink;    
+        }
+    }
+    
+    &__share {
+        width: 12px;
+        height: 12px;
+        fill: #fff;
+        margin: auto;
+        transition: fill 0.2s ease-in;
     }
 }

@@ -1,11 +1,24 @@
 .plans {
     padding: 50px 0 119px;
+    @include max($s) {
+        padding: 14px 0 58px;
+    }
+
     &__list {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: repeat(3, 175px);
         gap: 30px;
+        @include max($sm) {
+            gap: 10px;
+        }
+        @include max($s) {
+            grid-column: 0;
+            grid-row: 14px;
+            grid-template-rows: repeat(3, 60px);
+        }
     }
+
     &__item {
         grid-column: 3 span;
         box-shadow: 0px 0px 20px #e0e1e5;
@@ -17,7 +30,141 @@
         &:nth-child(6) {
             grid-row: 2 span;
         }
+        @include max($xl) {
+            grid-column: 4 span;
+        }
+        &:nth-child(1) {
+            @include max($sm) {
+                grid-column-start: 1;
+                grid-column-end: 13;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+        }
+        &:nth-child(7) {
+            @include max($md) {
+                grid-column-start: 5;
+                grid-row-start: 1;
+                grid-column-end: 9;
+            }
+            @include max($sm) {
+                grid-row-start: 2;
+                grid-column-start: 1;
+                grid-column-end: 13;
+            }
+            @include max($s) {
+                grid-row-start: 6;
+            }
+        }
+        &:nth-child(4) {
+            @include max($md) {
+                grid-column-start: 9;
+                grid-row-start: 1;
+                grid-column-end: 13;
+                grid-row-end: 3;
+            }
+            @include max($sm) {
+                grid-row-start: 5;
+                grid-row-end: 5;
+                grid-column-start: 7;
+                & .plans-card__images {
+                    max-width: 100%;
+                }
+            }
+            @include max($s) {
+                grid-row-start: 13;
+                grid-row-end: 16;
+                grid-column-start: 1;
+            }
+        }
+        &:nth-child(5) {
+            @include max($md) {
+                grid-column-start: 1;
+                grid-column-end: 5;
+                grid-row-start: 2;
+                grid-row-end: 4;
+            }
+            @include max($sm) {
+                grid-row-start: 3;
+                grid-row-end: 5;
+                grid-column-end: 7;
+                & .plans-card__images {
+                    max-width: 100%;
+                }
+            }
+            @include max($s) {
+                grid-row-start: 2;
+                grid-row-end: 5;
+                grid-column-end: 13;
+            }
+        }
+        &:nth-child(8) {
+            @include max($sm) {
+                grid-row-start: 7;
+                grid-column-start: 1;
+                grid-column-end: 13;
+            }
+            @include max($s) {
+                grid-row-start: 16;
+                grid-column-start: 1;
+                grid-column-end: 13;
+            }
+        }
+        &:nth-child(3) {
+            @include max($md) {
+                grid-column-start: 5;
+                grid-column-end: 9;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+            @include max($s) {
+                grid-column-start: 1;
+                grid-column-end: 13;
+                grid-row-start: 7;
+                grid-row-end: 9;
+            }
+        }
+        &:nth-child(6) {
+            @include max($sm) {
+                grid-column-start: 1;
+                grid-column-end: 7;
+                grid-row-start: 5;
+                grid-row-end: 6;
+                & .plans-card__images {
+                    max-width: 100%;
+                }
+            }
+            @include max($s) {
+                grid-column-start: 1;
+                grid-column-end: 13;
+                grid-row-start: 13;
+                grid-row-end: 9;
+            }
+        }
+        &:nth-child(2) {
+            @include max($md) {
+                grid-column-start: 1;
+                grid-column-end: 5;
+                grid-row-start: 4;
+                grid-row-end: 8;
+            }
+            @include max($sm) {
+                grid-row-start: 3;
+                grid-column-end: 7;
+                grid-column-start: 13;
+                grid-row-end: 5;
+                & .plans-card__images {
+                    max-width: 100%;
+                }
+            }
+            @include max($s) {
+                grid-row-start: 5;
+                grid-column-end: 13;
+                grid-column-start: 1;
+            }
+        }
     }
+
     &__button {
         padding: 0;
         background-color: transparent;
@@ -27,6 +174,7 @@
         width: 100%;
         height: 100%;
     }
+    
     &__icon {
         width: 36px;
         height: 36px;

@@ -4,6 +4,7 @@
     width: 100%;
     height: 100%;
     background-color: $white;
+
     &:hover {
         cursor: url(../images/cursor.svg), default;
     }
@@ -13,9 +14,11 @@
             transition: opacity 0.3s ease-in;
         }
     }
+
     &--meeting {
         background-color: $purple;
     }
+
     &__picture {
         display: block;
         margin-bottom: 20px;
@@ -33,11 +36,15 @@
             transition: opacity 0.3s ease-in;
         }
     }
+
     &__images {
         max-width: 264px;
         width: 100%;
         height: 255px;
         object-fit: cover;
+        @include max($xl) {
+            max-width: 100%;
+        }
         @include max($md) {
             max-width: 220px;
             height: 255px;
@@ -50,6 +57,9 @@
             max-width: 263px;
             width: 100%;
             height: 174px;
+            @include max($xl) {
+                max-width: 100%;
+            }
             @include max($md) {
                 max-width: 220px;
             }
@@ -68,26 +78,46 @@
             }
         }
     }
+
     &__info {
         padding: 0 20px 20px;
         height: 100%;
         display: flex;
         flex-direction: column;
+        @include max($sm) {
+            padding: 0 10px 10px;
+        }
         &--padding {
             padding-top: 30px;
+            @include max($sm) {
+                padding-top: 15px;
+            }
         }
     }
+
     &__times {
         text-transform: uppercase;
         margin-bottom: 46px;
         font-weight: 700;
         font-size: 20px;
+        @include lineClamp;
+        -webkit-line-clamp: 1;
+        @include max($sm) {
+            margin-bottom: 16px;
+        }
+        @include max($s) {
+            margin-bottom: 46px;
+        }
     }
+
     &__name {
         display: block;
         margin-bottom: 12px;
         font-size: 20px;
+        @include lineClamp;
+        -webkit-line-clamp: 1;
     }
+
     &__time {
         color: $blue;
         display: flex;
@@ -96,10 +126,14 @@
             text-transform: uppercase;
         }
     }
+    
     &__link {
         margin-top: auto;
         outline: transparent;
         transition: color 0.2s ease-in;
+        overflow-wrap: break-word;
+        @include lineClamp;
+        -webkit-line-clamp: 2;
         &:hover,
         &:focus {
             color: $pink;

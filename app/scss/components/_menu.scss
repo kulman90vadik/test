@@ -1,13 +1,19 @@
 .menu {
     padding-top: 15px;
+
     &__list {
         display: flex;
     }
+
     &__item {
         &:not(:last-child) {
             margin-right: 109px;
+            @include max($md) {
+                margin-right: 80px;
+            }
         }
     }
+    
     &__link {
         outline: transparent;
         color: #fff;
